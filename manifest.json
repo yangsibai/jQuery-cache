@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+    "name": "jQuery-cache",
+    "version": "0.1.0",
+    "description": "Replace jquery in site with local file to speed up page load.",
+    "permissions": [
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "minimum_chrome_version": "6.0.0.0",
+    "browser_action": {
+        "default_icon": "logo/64.png"
+    },
+    "icons": {
+        "64": "logo/64.png"
+    },
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["contentScript.js","files/jQuery/jquery-2.0.3.min.js"],
+        "run_at": "document_end"
+    }],
+    "web_accessible_resources":[
+        "contentScript.map"
+    ]
+}
