@@ -5,6 +5,8 @@
     "description": "Replace jquery in site with local file to speed up page load.",
     "permissions": [
         "tabs",
+        "webRequest",
+        "webRequestBlocking",
         "http://*/*",
         "https://*/*"
     ],
@@ -15,12 +17,10 @@
     "icons": {
         "64": "logo/64.png"
     },
-    "content_scripts": [{
-        "matches": ["<all_urls>"],
-        "js": ["contentScript.js","files/jQuery/jquery-2.0.3.min.js"],
-        "run_at": "document_end"
-    }],
     "web_accessible_resources":[
-        "contentScript.map"
-    ]
+        "files/jQuery/*.js"
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    }
 }
