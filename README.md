@@ -1,8 +1,8 @@
 ##jQuery-cache
 
-Replace jQuery file in the page with local jQuery file to speed up page load.
+Replace jQuery file in the page with local cached file to speed up page load.
 
-Besides, due to the GFW of China, chinese can't access Google CDN js. This chrome extension can avoid this situation.
+Besides, due to the GFW of China, Chinese can't access Google CDN js. This chrome extension can avoid this situation.
 
 通过使用本地的 jQuery 文件替代网页中使用的 jQuery 文件，从而提高加载速度。
 
