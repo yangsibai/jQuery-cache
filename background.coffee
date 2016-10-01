@@ -67,8 +67,8 @@ handler = (details)->
 execJQueryVersion = (originalURL)->
     if originalURL.toLowerCase().indexOf('jquery') > -1
         jQueryVersionRegex = /\d\.\d*\.\d/g
-        matches = jQueryVersionRegex.exec(originalURL)
-        return matches[0] if matches
+        matches = originalURL.match jQueryVersionRegex;
+        return matches[0] if matches?.length is 1
     return ""
 
 ###
