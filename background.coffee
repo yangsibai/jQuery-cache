@@ -46,16 +46,26 @@ localVersion = [
 ]
 
 filter =
-    urls : [
+    urls: [
         "http://*/*.js",
         "https://*/*.js"
     ]
+
+whiteLists = [
+    'g.alicdn.com'
+]
+
+notInWhiteList = (url)->
+    for item in whiteLists
+        if url.indexOf(item) isnt -1
+            return false
+    return true
 
 handler = (details)->
     jQueryVersion = execJQueryVersion(details.url)
     if jQueryVersion
         localCache = getLocalJsFile(jQueryVersion)
-        if localCache
+        if localCache and notInWhiteList(details.url)
             return {
                 redirectUrl: localCache
             }
