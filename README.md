@@ -1,4 +1,6 @@
-##jQuery-cache
+# jQuery-cache
+
+A Chrome extension to load jQuery from local.
 
 Replace jQuery file in the page with local cached file to speed up page load.
 
